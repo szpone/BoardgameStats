@@ -1,3 +1,6 @@
+from boardgamegeek import BGGClient
 from django import forms
-from django.contrib.auth.models import User
-from registration.forms import RegistrationForm
+from django import forms
+
+class SearchForm(forms.Form):
+    query = forms.CharField(label="query")

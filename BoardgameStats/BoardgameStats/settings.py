@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 # registration
 
 ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_OPEN = True
 
 
 # Application definition

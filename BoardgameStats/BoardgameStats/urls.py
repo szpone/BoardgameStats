@@ -15,15 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from stats.views import index
+from stats.views import SearchView
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index, name="index"),
+    url(r'^$', SearchView.as_view(), name="search-view"),
     url(r'^accounts/', include('registration.backends.hmac.urls')),
     url(r'^accounts/login', include('registration.backends.hmac.urls')),
     url(r'^accounts/register', include('registration.backends.hmac.urls')),
+
 
 
 
