@@ -5,3 +5,4 @@ lxml==3.8.0
 django_extensions
 Werkzeug
 boardgamegeek2
+django-bootstrap3
