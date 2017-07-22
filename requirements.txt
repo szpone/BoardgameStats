@@ -4,3 +4,4 @@ jsonpickle==0.9.4
 lxml==3.8.0
 django_extensions
 Werkzeug
+boardgamegeek2

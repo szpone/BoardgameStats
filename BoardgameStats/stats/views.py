@@ -14,18 +14,12 @@ class SearchView(View):
             query = form.cleaned_data["query"]
             query = bgg.search(query)
             query = [q.data() for q in query]
-            keys = [key for key in query[0]]
-            items = []
+            query_items = [query[i].items() for i in range(len(query) -1)]
 
-            for key in keys:
-                for item in query:
-                    items.append(item[key])
 
             return render(request, "results.html",
-                          {"query": query,
-                           "keys": keys,
-                           "items": items,
-                           "query": query})
+                          {"query_items": query_items,
+                           })
         else:
             return render(request, "main.html",
                           {"form": form})

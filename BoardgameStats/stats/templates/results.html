@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <table>
+    <!-- <table>
         <thead>
             <tr>
                 {% for key in keys %}
@@ -9,11 +9,22 @@
             </tr>
         </thead>
         <tbody>
-            {% for item in items %}
-                <tr>
+            <tr>
+                {% for item in items %}
                     <td>{{ item }}</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table> -->
+    <table>
+        <thead>
+            <tr>
+                {% for items in query_items %}
+                    {% for i, j in items %}
+                        <th> {{ i }} </th>
+                        <td> {{ j }} </td>
+                    {% endfor %}
                 </tr>
-            </tbody>
-        {% endfor %}
-    </table>
-{% endblock %}
+            {% endfor %}
+        </table>
+    {% endblock %}
