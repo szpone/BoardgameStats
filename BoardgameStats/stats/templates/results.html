@@ -1,15 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
+    <style>
+        table, tr, td {
+          border: 1px solid grey;
+        }
+    </style>
+
     <table>
         <tr>
-            {% for items in query_items %}
-                {% for i, j in items %}
-                    <th> {{ i }} </th>
-                    <td> {{ j }} </td>
+            <th></th>
+            {% for key in keys %}
+                <th>{{ key }}</th>
+            {% endfor %}
+        </tr>
+        {% for item in query_items %}
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                {% for key, value in item %}
+                    <td>{{ value }}</td>
                 {% endfor %}
             </tr>
-                <input type="checkbox">
-
         {% endfor %}
     </table>
 {% endblock %}
